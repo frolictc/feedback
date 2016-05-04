@@ -46,7 +46,7 @@ class FeedbackController extends Controller
                     $path = $model->getFile();
                     $file->saveAs($path);
 					
-					return $this->runAction('view', ['id' => $model->primaryKey]);
+					return $this->redirect(['feedback/view', 'id' => $model->primaryKey]);
                 }
             } else {
                 var_dump($model->getErrors());
